@@ -30,7 +30,8 @@ $(function() {
         it('URL is defined and not empty', function() {
 			allFeeds.forEach(function(val,index,arr){
 				expect(val.url).toBeDefined();
-				expect(val.url).not.toBe('');
+				expect((val.url).length).not.toEqual(0);
+				
 			});
             
         });
@@ -44,7 +45,7 @@ $(function() {
 		 it('name is defined and not empty', function() {
 			allFeeds.forEach(function(val,index,arr){
 				expect(val.name).toBeDefined();
-				expect(val.name).not.toBe('');
+				expect((val.name).length).not.toEqual(0);
 			});
             
         });
@@ -71,9 +72,9 @@ $(function() {
 		  
 		  it('changes visibility when the menu icon is clicked', function() {
             $('.menu-icon-link').click();
-            expect($('body').hasClass('menu-hidden')).toEqual(false);
+            expect($('body').hasClass('menu-hidden')).toBe(false);
             $('.menu-icon-link').click();
-            expect($('body').hasClass('menu-hidden')).toEqual(true);
+            expect($('body').hasClass('menu-hidden')).toBe(true);
           });
 		 });
 		  
